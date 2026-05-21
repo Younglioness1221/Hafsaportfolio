@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hafsa Amjad // Space & Climate Research // Digital Strategist </title>
+  <title>Hafsa Amjad // Space & Climate Research Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background Ambience Elements -->
-  <div class="ambient-space">
+  <!-- Cinematic Space-To-Earth Dynamic Video Base Background -->
+  <div class="video-space-wrapper">
+    <!-- Points directly to your local video asset file -->
+    <video autoplay loop muted playsinline id="bgVideo">
+      <source src="space-zoom.mp4" type="video/mp4">
+    </video>
     <div class="radar-grid"></div>
-    <div class="aurora-glow"></div>
-    <div class="aurora-glow-secondary"></div>
   </div>
+  <div class="video-overlay-tint"></div>
 
   <!-- Navigation Layer -->
   <nav class="navbar glass-panel">
@@ -29,11 +32,10 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle structural visual palette theme">
-          <!-- Moon Icon (Default state) -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle visual theme">
           <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
         </button>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigational system menu">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
