@@ -130,6 +130,7 @@ section {
   letter-spacing: -0.02em;
   background: linear-gradient(to right, var(--accent-blue), var(--accent-emerald), var(--accent-cyan));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
 }
@@ -256,6 +257,7 @@ section {
 .hero h1 span {
   background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan), var(--accent-emerald));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
