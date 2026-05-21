@@ -8,17 +8,18 @@
 </head>
 <body>
 
-  <!-- Cinematic Space-To-Earth Dynamic Video Base Background -->
   <div class="video-space-wrapper">
-    <!-- Points directly to your local video asset file -->
-    <video autoplay loop controls playsinline id="bgVideo">
+    <video autoplay loop muted playsinline id="bgVideo">
       <source src="space-zoom.mp4" type="video/mp4">
     </video>
     <div class="radar-grid"></div>
   </div>
   <div class="video-overlay-tint"></div>
 
-  <!-- Navigation Layer -->
+  <audio id="bgAudio" loop>
+    <source src="nature-audio.mp3" type="audio/mpeg">
+  </audio>
+
   <nav class="navbar glass-panel">
     <div class="container nav-container">
       <a href="#home" class="logo">HAFSA AMJAD //</a>
@@ -42,7 +43,6 @@
     </div>
   </nav>
 
-  <!-- Hero Module -->
   <header id="home" class="hero">
     <div class="container">
       <div class="hero-badge">
@@ -51,6 +51,14 @@
       </div>
       <h1>Computer Science Student <br><span>Climate & Space Research</span> Enthusiast</h1>
       <p>Exploring technology, meteorology, and data-driven computational models for Earth and space systems analysis.</p>
+      
+      <div style="margin-bottom: 2.5rem;">
+        <button id="audioControlBtn" class="btn btn-secondary" style="font-family: monospace; font-size: 0.8rem; padding: 0.5rem 1.2rem; border-radius: 2rem; gap: 0.5rem;">
+          <svg id="audioIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+          <span id="audioBtnText">Telemetry Audio: OFF</span>
+        </button>
+      </div>
+
       <div class="btn-group">
         <a href="#projects" class="btn btn-primary">View Projects</a>
         <a href="resume.pdf" download class="btn btn-secondary">
@@ -61,7 +69,6 @@
     </div>
   </header>
 
-  <!-- About Module -->
   <section id="about">
     <div class="container">
       <div class="section-title">
@@ -88,7 +95,6 @@
     </div>
   </section>
 
-  <!-- Skills Module -->
   <section id="skills">
     <div class="container">
       <div class="section-title">
@@ -145,7 +151,6 @@
     </div>
   </section>
 
-  <!-- Projects Module -->
   <section id="projects">
     <div class="container">
       <div class="section-title">
@@ -201,7 +206,6 @@
     </div>
   </section>
 
-  <!-- Research Module -->
   <section id="research">
     <div class="container">
       <div class="section-title">
@@ -232,7 +236,6 @@
     </div>
   </section>
 
-  <!-- Chronology & Experience Module -->
   <section id="experience">
     <div class="container">
       <div class="timeline-section-grid">
@@ -279,7 +282,6 @@
     </div>
   </section>
 
-  <!-- Contact Module -->
   <section id="contact">
     <div class="container">
       <div class="section-title">
@@ -308,7 +310,6 @@
     </div>
   </section>
 
-  <!-- Footnotes Component -->
   <footer>
     <p>© <span id="year"></span> Hafsa Amjad. Calculated with Vanilla HTML + CSS + JS.</p>
     <p>System Status: Nominal // Data Flow Secure</p>

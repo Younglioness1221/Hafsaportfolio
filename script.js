@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
-  // 1. SCROLL-DRIVEN CINEMATIC TRANSITION VIDEO SCRUBBING
+  // 1. SCROLL-DRIVEN DYNAMIC VIDEO SCRUBBING
   // ==========================================================================
   const video = document.getElementById('bgVideo');
 
-  // Ensure the video metadata loads so we know its duration length parameters
   video.addEventListener('loadedmetadata', () => {
     mapVideoToScroll();
   });
@@ -17,17 +16,43 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (docHeight <= 0) return;
     
-    // Calculate page position ratio percentage (0.0 to 1.0)
     const scrollFraction = scrollTop / docHeight;
     
-    // Translate page scroll percentage directly to video duration timestamps
     if (video.duration) {
       video.currentTime = video.duration * scrollFraction;
     }
   }
 
   // ==========================================================================
-  // 2. THEME TOGGLE MECHANISM (DARK / LIGHT MAPPING)
+  // 2. AUDIO FEED SYSTEM (MUTED VECTOR RECOVERY)
+  // ==========================================================================
+  const audio = document.getElementById('bgAudio');
+  const audioControlBtn = document.getElementById('audioControlBtn');
+  const audioIcon = document.getElementById('audioIcon');
+  const audioBtnText = document.getElementById('audioBtnText');
+
+  audioControlBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      // Unpause and sync background wave streams
+      audio.play().catch(err => console.log("Audio unlock restriction:", err));
+      audioBtnText.textContent = "Telemetry Audio: LIVE";
+      audioControlBtn.style.borderColor = "var(--accent-emerald)";
+      
+      // Swap out visual matrix path to active sound waves
+      audioIcon.innerHTML = `<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>`;
+    } else {
+      // Freeze audio track
+      audio.pause();
+      audioBtnText.textContent = "Telemetry Audio: OFF";
+      audioControlBtn.style.borderColor = "var(--border-glass)";
+      
+      // Swap path to muted/canceled waves
+      audioIcon.innerHTML = `<path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>`;
+    }
+  });
+
+  // ==========================================================================
+  // 3. THEME TOGGLE MECHANISM (DARK / LIGHT MAPPING)
   // ==========================================================================
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = document.getElementById('themeIcon');
@@ -58,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 3. MOBILE NAVIGATION SYSTEM
+  // 4. MOBILE NAVIGATION SYSTEM
   // ==========================================================================
   const mobileToggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
@@ -74,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 4. RUNTIME FOOTER CALCULATION LOG
+  // 5. RUNTIME FOOTER CALCULATION LOG
   // ==========================================================================
   document.getElementById('year').textContent = new Date().getFullYear();
 });
